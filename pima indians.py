@@ -112,10 +112,14 @@ Actual Yes |   F  |  T   |
            |      |      |
            ---------------
 '''
+
+print 'random guess is .63 (97/154)'
 # Make predictions on validation dataset
 lr = LogisticRegression()
 lr.fit(rescaledX, Y_train)
 predictions = lr.predict(rescaledX_val)
+print
+print 'K nearest neighbors'
 print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions))
@@ -123,6 +127,8 @@ print(classification_report(Y_validation, predictions))
 svc = SVC()
 svc.fit(rescaledX, Y_train)
 predictions = svc.predict(rescaledX_val)
+print
+print "Support vector machine"
 print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions))

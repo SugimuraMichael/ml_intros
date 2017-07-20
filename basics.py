@@ -64,20 +64,25 @@ for name, model in models:
 
 
 
-
+print
+print 'random guess is .4 (12/30)'
 # Make predictions on validation dataset
 knn = KNeighborsClassifier()
 knn.fit(X_train, Y_train)
 predictions = knn.predict(X_validation)
+print
+print 'K nearest neighbors'
 print(accuracy_score(Y_validation, predictions))
-print(confusion_matrix(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions,labels=['Iris-setosa','Iris-virginica','Iris-versicolor']))
 print(classification_report(Y_validation, predictions))
 
 svc = SVC()
 svc.fit(X_train, Y_train)
 predictions = svc.predict(X_validation)
+print
+print "Support vector machine"
 print(accuracy_score(Y_validation, predictions))
-print(confusion_matrix(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions,labels=['Iris-setosa','Iris-virginica','Iris-versicolor']))
 print(classification_report(Y_validation, predictions))
 
 
